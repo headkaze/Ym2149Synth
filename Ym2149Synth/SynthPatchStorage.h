@@ -67,3 +67,4 @@ class SynthPatchStorageClass {
 typedef SynthPatchStorageClass SynthPatchStorage;
 
 #endif
+

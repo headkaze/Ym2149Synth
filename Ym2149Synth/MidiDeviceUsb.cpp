@@ -39,35 +39,35 @@ void MidiDeviceUsbClass::update()
         data2   = usbMIDI.getData2();
 
         switch(usbMIDI.getType()) {
-            case 0: // note off
+            case 0x80: // note off
                 command = 0x80 + channel;
                 callback->onNoteOff(this);
                 break;
-            case 1: // note on
+            case 0x90: // note on
                 command = 0x90 + channel;
                 callback->onNoteOn(this);
                 break;
-            case 2: // VC
+            case 0xA0: // VC
                 command = 0xA0 + channel;
                 callback->onPolyPressure(this);
                 break;
-            case 3: // CC
+            case 0xB0: // CC
                 command = 0xB0 + channel;
                 callback->onControlChange(this);
                 break;
-            case 4: // PG
+            case 0xC0: // PG
                 command = 0xC0 + channel;
                 callback->onProgramChange(this);
                 break;
-            case 5: // AT
+            case 0xD0: // AT
                 command = 0xD0 + channel;
                 callback->onAfterTouch(this);
                 break;
-            case 6: // PB
+            case 0xE0: // PB
                 command = 0xE0 + channel;
                 callback->onPitchBend(this);
                 break;
-            case 8: // RT
+            case 0xF0: // RT
                 onUsbRealTime(data1);
                 break;
         }
@@ -190,3 +190,4 @@ void MidiDeviceUsbClass::onPitchBend(MidiCallbackClass * midi)
 {
     sendPitchBend(midi->getChannel(), midi->getData1(), midi->getData2());
 }
+

@@ -125,3 +125,4 @@ void SynthSoftEnvelopeClass::reset()
     phase = 0;
     value = -1;
 }
+

@@ -148,3 +148,4 @@ void SynthPatchStorageClass::writeValue(uint8_t address,uint8_t value)
     if(address >= patchSize) return;
     SynthPatchStorageClass::bank[selectedPatch][address] = value;
 }
+

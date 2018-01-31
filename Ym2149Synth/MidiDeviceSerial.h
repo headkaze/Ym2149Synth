@@ -58,3 +58,4 @@ class MidiDeviceSerialClass : public MidiCallback {
 typedef MidiDeviceSerialClass MidiDeviceSerial;
 
 #endif
+

@@ -72,3 +72,4 @@ class YM2149Class {
 typedef YM2149Class YM2149;
 
 #endif
+

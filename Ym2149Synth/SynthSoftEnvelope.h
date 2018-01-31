@@ -55,3 +55,4 @@ class SynthSoftEnvelopeClass {
 typedef SynthSoftEnvelopeClass SynthSoftEnvelope;
 
 #endif
+

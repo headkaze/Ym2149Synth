@@ -373,3 +373,4 @@ void YM2149Class::mute()
     levelValue[2] = 0;
     mixerValue = 0b11111000;
 }
+

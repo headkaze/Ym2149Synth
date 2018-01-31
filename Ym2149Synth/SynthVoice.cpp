@@ -435,3 +435,4 @@ void SynthVoice::setSynthType(uint8_t v)
         playNote(note, velocity);
     }
 }
+

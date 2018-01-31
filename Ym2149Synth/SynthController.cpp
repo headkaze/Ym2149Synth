@@ -253,3 +253,4 @@ void SynthControllerClass::benchmark()
     Serial.println(t2-t1);
     delay(500);
 }
+

@@ -55,3 +55,4 @@ class MidiDeviceUsbClass : public MidiCallback {
 typedef MidiDeviceUsbClass MidiDeviceUsb;
 
 #endif
+

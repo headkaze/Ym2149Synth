@@ -105,3 +105,4 @@ class SynthVoiceClass {
 typedef SynthVoiceClass SynthVoice;
 
 #endif
+
