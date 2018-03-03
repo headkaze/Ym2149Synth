@@ -1,4 +1,5 @@
 #include "MidiDeviceUsb.h"
+#define MIDI_INTERFACE 1
 
 void MidiDeviceUsbClass::onUsbRealTime(uint8_t message)
 {

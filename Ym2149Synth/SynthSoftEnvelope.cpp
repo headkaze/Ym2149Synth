@@ -126,3 +126,9 @@ void SynthSoftEnvelopeClass::reset()
     value = -1;
 }
 
+
+
+
+
+
+

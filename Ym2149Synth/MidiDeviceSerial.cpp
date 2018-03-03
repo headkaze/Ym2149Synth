@@ -210,3 +210,9 @@ void MidiDeviceSerialClass::onPitchBend(MidiCallbackClass * midi)
     sendPitchBend(midi->getChannel(), midi->getData1(), midi->getData2());
 }
 
+
+
+
+
+
+

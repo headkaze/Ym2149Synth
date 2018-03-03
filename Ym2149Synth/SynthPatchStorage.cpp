@@ -149,3 +149,9 @@ void SynthPatchStorageClass::writeValue(uint8_t address,uint8_t value)
     SynthPatchStorageClass::bank[selectedPatch][address] = value;
 }
 
+
+
+
+
+
+
