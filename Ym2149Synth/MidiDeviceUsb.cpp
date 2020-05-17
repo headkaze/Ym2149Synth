@@ -1,5 +1,5 @@
 #include "MidiDeviceUsb.h"
-#define MIDI_INTERFACE 1
+//#define MIDI_INTERFACE 1
 
 void MidiDeviceUsbClass::onUsbRealTime(uint8_t message)
 {
@@ -191,4 +191,3 @@ void MidiDeviceUsbClass::onPitchBend(MidiCallbackClass * midi)
 {
     sendPitchBend(midi->getChannel(), midi->getData1(), midi->getData2());
 }
-

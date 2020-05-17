@@ -24,15 +24,21 @@
  * Define BENCHMARK to run benchmarking (Look to method "benchmark" SynthController.cpp)
  */
 //#define BENCHMARK 1
+#define YMPLAYER 1
 
 #include "MidiDeviceUsb.h"
 #include "MidiDeviceSerial.h"
 #include "SynthController.h"
+#include "YMPlayerSerial.h"
 
 SynthController synth;
 
+#ifdef YMPLAYER
+YMPlayerSerial ymPlayer;
+#else
 MidiDeviceSerial midi(&Serial1);
 MidiDeviceUsb usbMidi;
+#endif
 
 IntervalTimer samplerTimer;
 IntervalTimer eventTimer;
@@ -54,6 +60,9 @@ void setup()
 {
     pinMode(13,OUTPUT); // debug led on teensy
 
+#ifdef YMPLAYER
+    ymPlayer.begin();
+#else
     synth.setChannels(1,2,3);
     synth.begin();
 
@@ -66,15 +75,19 @@ void setup()
     eventTimer.begin(updateEvents, 1000);
     eventTimer.priority(1);
 #endif
+#endif
 }
 
 void loop()
 {
+#ifdef YMPLAYER
+    ymPlayer.update();
+#else
 #ifndef BENCHMARK
     midi.update();
     usbMidi.update();
 #else
     synth.benchmark();
 #endif
+#endif
 }
-
